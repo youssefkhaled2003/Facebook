@@ -1,0 +1,77 @@
+.userpost {
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd; /* Subtle border for the container */
+  border-radius: 8px; /* Rounded corners for the container */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  padding: 15px; /* Padding for the container */
+  margin-top: 15px; /* Margin above the container */
+  max-width: 600px; /* Max width for better readability */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.leftbtn, .rightbtn {
+  flex: 1; /* Equal width for both buttons */
+  margin-right: 2px; /* Small space between buttons */
+  font-size: 14px; /* Font size for buttons */
+  border-radius: 5px; /* Rounded corners for buttons */
+  border: 1px solid #ddd; /* Subtle border */
+}
+
+.leftbtn {
+  background: #e9eff1; /* Light background */
+  color: #333; /* Dark text */
+}
+
+.rightbtn {
+  background: #f0f2f5; /* Light background */
+  color: #333; /* Dark text */
+}
+
+.leftbtn:hover, .rightbtn:hover {
+  background: #f0f2f5; /* Light background on hover */
+  color: #1877f2; /* Facebook blue on hover */
+}
+
+textarea.form-control {
+  width: 100%;
+  border: 1px solid #ddd; /* Subtle border for textarea */
+  border-radius: 5px; /* Rounded corners for textarea */
+  padding: 10px; /* Padding inside textarea */
+  font-size: 14px; /* Font size for textarea */
+  resize: none; /* Disable resizing */
+}
+
+img {
+  border-radius: 5px; /* Rounded corners for image */
+  border: 1px solid #ddd; /* Subtle border for image */
+}
+
+.postbtn {
+  background: #1877f2; /* Facebook blue */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px; /* Padding inside button */
+  border-radius: 5px; /* Rounded corners for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 14px; /* Font size for button */
+  transition: background 0.3s; /* Smooth transition */
+}
+.image-preview {
+  max-width: 150px; /* Fixed width for image preview */
+  max-height: 150px; /* Fixed height for image preview */
+  border-radius: 5px; /* Rounded corners for image */
+  border: 1px solid #ddd; /* Subtle border */
+  margin-top: 10px; /* Space above the image */
+}
+
+.postbtn:hover {
+  background: #165eab; /* Darker blue on hover */
+}

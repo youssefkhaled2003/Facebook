@@ -1,0 +1,10 @@
+<div class="banner">
+  <img *ngIf="imageSrc" [src]="imageSrc" alt="Banner Image" class="banner-image" />
+  <input
+    type="file"
+    id="fileInput"
+    style="display: none"
+    (change)="onImageUpload($event)"
+  />
+  <button class="upload-button" (click)="triggerFileInput()">Upload Banner</button>
+</div>

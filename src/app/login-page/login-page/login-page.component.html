@@ -1,0 +1,33 @@
+<!-- src/app/login-page/login-page.component.html -->
+<div class="d-flex flex-column min-vh-100">
+  <app-header></app-header>
+
+  <div class="container shadow-sm p-4 mb-10 bg-body rounded border border-dark">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div class="text-center mb-4">
+        <h2>Log in to Facebook</h2>
+      </div>
+      <div class="form-group mb-3">
+        <input type="text" class="form-control" placeholder="Email address" formControlName="email" required>
+      </div>
+      <div class="form-group mb-3">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+      </div>
+      <div class="d-grid mb-3">
+        <button type="submit" class="btn btn-primary">Log in</button>
+      </div>
+      <div class="text-center mb-4">
+        <a href="#" class="text-primary">Forgotten account?</a>
+      </div>
+      <hr>
+      <div class="text-center">
+        <button type="button" class="btn btn-success" (click)="openModal()" style="font-weight: 700;">
+          Create new account
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <app-signup-page></app-signup-page>
+  <app-footer class="mt-auto"></app-footer>
+</div>

@@ -1,0 +1,23 @@
+<div class="d-flex flex-column align-items-center justify-content-center border border-dark p-3 userpost">
+  <!-- Button Container -->
+  <div class="d-flex w-100 mb-3 border-bottom border-dark button-container">
+    <button class="btn btn-secondary leftbtn" (click)="imageselect = false">Text</button>
+    <button class="btn btn-secondary rightbtn" (click)="imageselect = true">Image</button>
+  </div>
+
+  <!-- Conditional Content Display -->
+  <div class="d-flex flex-column align-items-center justify-content-center w-100">
+    <ng-container *ngIf="imageselect; else textPost">
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+      <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" class="image-preview" />
+
+      <textarea class="form-control mt-3" placeholder="Add text here" #posttext></textarea>
+      <button class="btn btn-primary mt-2 postbtn" (click)="onPost()">Post</button>
+    </ng-container>
+
+    <ng-template #textPost>
+      <textarea class="form-control mt-3" placeholder="Write your post here" #posttext></textarea>
+      <button class="btn btn-primary mt-2 postbtn" (click)="onPost()">Post</button>
+    </ng-template>
+  </div>
+</div>

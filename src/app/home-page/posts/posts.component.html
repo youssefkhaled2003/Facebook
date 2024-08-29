@@ -1,0 +1,36 @@
+<!-- src/app/posts/posts.component.html -->
+<div *ngIf="postarr && postarr.length > 0" class="d-flex justify-content-center">
+  <div class="w-75">
+    <div *ngFor="let post of postarr; let i = index" class="post-container mt-3 p-3">
+      <div class="d-flex align-items-center mb-3">
+        <img [src]="userData.userIcon || 'path/to/default-icon.png'" alt="User Image" class="user-icon me-2" />
+        <div class="post-meta">
+          <h6 class="username m-0">{{ userData.first_name }} {{ userData.surname }}</h6>
+          <p class="post-date m-0">{{ post.date | date:'short' }}</p>
+        </div>
+      </div>
+
+      <div class="post-content m-3">
+        <div *ngIf="post.imageUrl">
+          <img [src]="post.imageUrl" alt="Post Image" class="post-image mb-3" />
+        </div>
+        <p class="post-text">{{ post.post.join(', ') }}</p>
+      </div>
+
+      <div class="post-actions">
+        <button (click)="onLiked(i)" class="post-button like-button">
+          {{ post.isLiked ? 'Dislike' : 'Like' }}
+        </button>
+        <button (click)="onComment(post)" class="post-button comment-button">
+          Comment
+        </button>
+        <p class="text-muted m-0">Likes: {{ post.likes }}</p>
+      </div>
+      <app-comments *ngIf="isCommentOpen && activePost === post" [post]="post"></app-comments>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!postarr || postarr.length === 0" class="d-flex justify-content-center">
+  <p class="m-2">No posts available.</p>
+</div>

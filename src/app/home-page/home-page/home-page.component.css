@@ -1,0 +1,75 @@
+/* src/app/home-page/home-page/home-page.component.css */
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f2f5;
+}
+
+.row {
+  margin: 0;
+}
+
+.sidebar {
+
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0; /* Adjust to stick to the top of the viewport */
+  height: 100vh; /* Full height of viewport */
+  margin: 0;
+  padding: 0;
+
+
+}
+
+.main-content {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 60%;
+  padding: 20px; /* Add padding for content */
+}
+
+.post-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px; /* Add padding for content */
+}
+
+.post-meta {
+  font-size: 14px;
+  color: #65676b;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.post-text {
+  font-size: 16px;
+  color: #050505;
+}
+
+.post-button {
+  border: none;
+  font-size: 14px;
+}
+
+.like-button {
+  color: #1877f2;
+}
+
+.comment-button {
+  color: #65676b;
+}
+
+.bg-light {
+  background-color: #ffffff !important;
+}

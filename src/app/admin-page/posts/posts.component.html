@@ -1,0 +1,31 @@
+<!-- src/app/posts/posts.component.html -->
+<div class="posts-container">
+  <div *ngFor="let post of posts" class="post-card">
+    <div class="post-header">
+      <h3>{{ post.userName }}</h3>
+      <p class="post-date">{{ post.date | date:'short' }}</p>
+    </div>
+    <div class="post-content">
+      <p *ngIf="post.post.length > 0">{{ post.post[0] }}</p>
+      <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post image" class="post-image"/>
+    </div>
+    <div class="post-footer">
+      <button (click)="editPost(post)">Edit</button>
+      <button (click)="toggleComments(post)">Open Comments</button>
+    </div>
+    <div *ngIf="activePost === post && isCommentsOpen" class="comments-section">
+      <div *ngFor="let comment of post.comments" class="comment-item">
+        <p>{{ comment.text }}</p>
+        <button (click)="editComment(comment)">Edit</button>
+        <input *ngIf="editingComment === comment" [(ngModel)]="comment.text" />
+        <button *ngIf="editingComment === comment" (click)="saveComment()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="editedPost" class="edit-form">
+    <textarea [(ngModel)]="editedPost.post[0]" placeholder="Edit post"></textarea>
+    <button (click)="updatePost()">Update Post</button>
+    <button (click)="editedPost = null">Cancel</button>
+  </div>
+</div>

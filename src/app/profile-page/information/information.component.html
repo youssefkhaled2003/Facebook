@@ -1,0 +1,15 @@
+<div class="profile-container d-flex align-items-center">
+  <div class="image-container position-relative" (click)="triggerFileInput()">
+    <img *ngIf="imageUrl; else uploadButton" [src]="imageUrl" alt="Profile Image" class="profile-image">
+    <ng-template #uploadButton>
+      <div class="placeholder">
+        <span class="plus-sign" *ngIf="imageUrl">+</span>
+        <button class="upload-button" (click)="triggerFileInput()">Upload Image</button>
+      </div>
+    </ng-template>
+  </div>
+  <input type="file" #fileInput (change)="onImageUpload($event)" hidden>
+  <div class="name-container ms-3">
+    <h2>{{ firstName }} {{ lastName }}</h2>
+  </div>
+</div>

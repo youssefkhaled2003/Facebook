@@ -1,0 +1,53 @@
+/* src/app/comments/comments.component.css */
+.comments-section {
+  background-color: #f0f2f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-comment {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.previous-comments {
+  margin-top: 10px;
+}
+
+.list-group-item {
+  background-color: #ffffff;
+  border: none;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.list-group-item span {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #050505;
+  margin-bottom: 10px;
+}
+
+.no-comments {
+  text-align: center;
+  color: #757575;
+}
+
+input.form-control {
+  border-radius: 20px;
+  background-color: #e4e6eb;
+  border: none;
+}
+
+button.btn-primary {
+  background-color: #1877f2;
+  border: none;
+  border-radius: 20px;
+}

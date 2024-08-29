@@ -1,0 +1,45 @@
+<div class="user-info-container">
+  <h1>Work Experience</h1>
+
+  <div class="user-info-field">
+    <label>school:</label>
+    <span *ngIf="!isEditing['school']">{{ workInfo['school'] || 'None' }}</span>
+    <div *ngIf="isEditing['school']">
+      <input [(ngModel)]="newValues['school']" placeholder="Enter school" />
+      <button (click)="submitMobileNumber()">Submit</button>
+    </div>
+    <button *ngIf="!isEditing['school']" (click)="startEditing('school')">Edit</button>
+  </div>
+
+  <div class="user-info-field">
+    <label>college:</label>
+    <span *ngIf="!isEditing['college']">{{ workInfo['college'] || 'None' }}</span>
+    <div *ngIf="isEditing['college']">
+      <input [(ngModel)]="newValues['college']" placeholder="Enter college" />
+      <button (click)="submitBirthDate()">Submit</button>
+    </div>
+    <button *ngIf="!isEditing['college']" (click)="startEditing('college')">Edit</button>
+  </div>
+
+  <div class="user-info-field">
+    <label>gpa:</label>
+    <span *ngIf="!isEditing['gpa']">{{ workInfo['gpa'] || 'None' }}</span>
+    <div *ngIf="isEditing['gpa']">
+      <input [(ngModel)]="newValues['gpa']" placeholder="Enter gpa" />
+      <button (click)="submitGender()">Submit</button>
+    </div>
+    <button *ngIf="!isEditing['gpa']" (click)="startEditing('gpa')">Edit</button>
+  </div>
+
+  <div class="user-info-field">
+    <label>work:</label>
+    <span *ngIf="!isEditing['work']">{{ workInfo['work'] !== null ? workInfo['work'] : 'None' }}</span>
+    <div *ngIf="isEditing['work']">
+      <input [(ngModel)]="newValues['work']" type="number" placeholder="Enter work" />
+      <button (click)="submitAge()">Submit</button>
+    </div>
+    <button *ngIf="!isEditing['work']" (click)="startEditing('work')">Edit</button>
+  </div>
+
+
+</div>

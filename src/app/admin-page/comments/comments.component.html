@@ -1,0 +1,9 @@
+<!-- src/app/comments/comments.component.html -->
+<div class="comments-container">
+  <div *ngFor="let comment of comments" class="comment-item">
+    <p>{{ comment.text }}</p>
+    <button (click)="editComment(comment)">Edit</button>
+    <input *ngIf="editingComment === comment" [(ngModel)]="comment.text" />
+    <button *ngIf="editingComment === comment" (click)="saveComment()">Save</button>
+  </div>
+</div>

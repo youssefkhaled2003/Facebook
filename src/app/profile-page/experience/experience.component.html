@@ -1,0 +1,45 @@
+<div class="user-info-container">
+  <h1>User Profile</h1>
+
+  <div class="user-info-field">
+    <label>Mobile Number:</label>
+    <span *ngIf="!isEditing['mobileNumber']">{{ userInfo['mobileNumber'] || 'None' }}</span>
+    <div *ngIf="isEditing['mobileNumber']">
+      <input [(ngModel)]="newValues['mobileNumber']" placeholder="Enter mobile number" />
+      <button (click)="submitMobileNumber()">Submit</button>
+    </div>
+    <button *ngIf="!isEditing['mobileNumber']" (click)="startEditing('mobileNumber')">Edit</button>
+  </div>
+
+  <div class="user-info-field">
+    <label>Birth Date:</label>
+    <span *ngIf="!isEditing['birthDate']">{{ userInfo['birthDate'] || 'None' }}</span>
+    <div *ngIf="isEditing['birthDate']">
+      <input [(ngModel)]="newValues['birthDate']" placeholder="Enter birth date" />
+      <button (click)="submitBirthDate()">Submit</button>
+    </div>
+    <button *ngIf="!isEditing['birthDate']" (click)="startEditing('birthDate')">Edit</button>
+  </div>
+
+  <div class="user-info-field">
+    <label>Gender:</label>
+    <span *ngIf="!isEditing['gender']">{{ userInfo['gender'] || 'None' }}</span>
+    <div *ngIf="isEditing['gender']">
+      <input [(ngModel)]="newValues['gender']" placeholder="Enter gender" />
+      <button (click)="submitGender()">Submit</button>
+    </div>
+    <button *ngIf="!isEditing['gender']" (click)="startEditing('gender')">Edit</button>
+  </div>
+
+  <div class="user-info-field">
+    <label>Age:</label>
+    <span *ngIf="!isEditing['age']">{{ userInfo['age'] !== null ? userInfo['age'] : 'None' }}</span>
+    <div *ngIf="isEditing['age']">
+      <input [(ngModel)]="newValues['age']" type="number" placeholder="Enter age" />
+      <button (click)="submitAge()">Submit</button>
+    </div>
+    <button *ngIf="!isEditing['age']" (click)="startEditing('age')">Edit</button>
+  </div>
+
+
+</div>

@@ -1,0 +1,49 @@
+<div *ngIf="!isAdmin" class="sidebar">
+  <h4 class="text-center mt-2">
+    <button class="btn btn-link" type="button" (click)="toggleCollapse()">
+      <img class="user-icon" [src]="userData.userIcon || 'path/to/default-icon.png'" alt="User Image">
+      <span class="username">{{ userData.first_name }} {{ userData.surname }}</span>
+    </button>
+  </h4>
+
+  <div [ngClass]="{'collapse': !isCollapsed, 'show': isCollapsed}" id="navbarContent">
+    <ul class="nav flex-column mt-4">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Friends</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Notifications</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="isAdmin" class="position-sticky sidebar">
+  <h4 class="text-center mt-2">
+    <button class="btn btn-link" type="button" (click)="toggleCollapse()">
+      <img class="user-icon" [src]="userData.userIcon || 'path/to/default-icon.png'" alt="User Image">
+      <span class="username">{{ userData.first_name }} {{ userData.surname }}</span>
+    </button>
+  </h4>
+
+  <div [ngClass]="{'collapse': !isCollapsed, 'show': isCollapsed}" id="navbarContent">
+    <ul class="nav flex-column mt-4">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/users">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/posts">Posts</a>
+      </li>
+
+    </ul>
+  </div>
+</div>

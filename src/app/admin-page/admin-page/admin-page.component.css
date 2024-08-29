@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+app-sidebar {
+  width: 250px; /* Adjust as needed */
+  background-color: #f4f4f4; /* Background color for the sidebar */
+  padding: 0;
+  height: 100vh;
+}
+
+router-outlet {
+  flex: 1; /* Take up the remaining space */
+  background-color: #fff; /* Optional: Set a background color for the main content */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}

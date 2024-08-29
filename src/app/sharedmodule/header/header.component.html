@@ -1,0 +1,47 @@
+<nav *ngIf="isLoggedIn" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-primary" href="#">
+      <h1>Facebook</h1>
+    </a>
+
+    <form class="d-none d-lg-block ms-auto me-auto">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Facebook" aria-label="Search">
+        <button class="btn btn-primary" type="button">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </form>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img class="user-icon" [src]="userData.userIcon || 'path/to/default-icon.png'" alt="User Image">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/profile">{{ userData.first_name }} {{ userData.surname }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div *ngIf="!isLoggedIn" class="header p-5 bg-dark">
+  <h1 class="text-center text-primary">Facebook</h1>
+</div>

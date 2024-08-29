@@ -1,0 +1,52 @@
+/* src/app/header/header.component.css */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #242526; /* Facebook's header background color */
+  padding: 10px 20px;
+}
+
+.navbar-brand h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.input-group .form-control {
+  border: none;
+  background-color: #3a3b3c;
+  color: #e4e6eb;
+  border-radius: 50px;
+}
+
+.input-group .btn {
+  background-color: #3a3b3c;
+  border: none;
+  border-radius: 50%;
+}
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.nav-link {
+  color: #e4e6eb !important;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #1877f2 !important;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.header {
+  background-color: #242526;
+  padding: 50px;
+  text-align: center;
+}
+
+.header h1 {
+  color: #1877f2;
+  font-size: 36px;
+}

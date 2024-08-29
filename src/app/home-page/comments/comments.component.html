@@ -1,0 +1,24 @@
+<div class="comments-section p-3">
+  <div class="add-comment mt-3">
+  </div>
+
+  <div *ngIf="post.comments && post.comments.length > 0" class="previous-comments">
+    <ul class="list-group">
+      <li *ngFor="let comment of post.comments" class="list-group-item d-flex align-items-center">
+        <img [src]="userData.userIcon|| 'path/to/default-icon.png'" alt="User Image" class="user-icon me-2">
+        <span>{{ comment.text }}</span>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="d-flex align-items-center mt-3">
+    <input [(ngModel)]="newComment" type="text" class="form-control me-2" placeholder="Write a comment..." />
+    <button (click)="addComment()" class="btn btn-primary">Add Comment</button>
+  </div>
+
+
+  <div *ngIf="post?.comments?.length === 0" class="no-comments mt-3">
+    <p>No comments yet. Be the first to comment!</p>
+  </div>
+</div>

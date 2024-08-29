@@ -1,0 +1,15 @@
+/* CSS for the container */
+.info-experience-container {
+  display: flex;
+  width: 100%;
+  gap: 20px; /* Adjust space between components as needed */
+  justify-content: space-between; /* Adjusts space between children evenly */
+  align-items: flex-start; /* Aligns items at the start (top) of the container */
+}
+
+/* Optional: Add styles to the child components for better control */
+app-experience,
+app-work {
+  flex: 1; /* Allows child components to grow and shrink as needed */
+  min-width: 0; /* Prevents flex items from overflowing their container */
+}
